@@ -1,0 +1,74 @@
+void main() {
+
+        int opc;
+        int anioAc = 2025;
+
+        Scanner sc= new Scanner(System.in);
+        PerfilMedico perfil1 = new PerfilMedico();
+
+
+        do {
+            System.out.println("\n--- MENU DE CONSULTA MEDICA ---");
+            System.out.println("Seleccione una opcion:");
+            System.out.print("1.Ingresar los datos personales del paciente\n");
+            System.out.print("2.Mostrar Datos del paciente\n");
+            System.out.print("3.Mostrar Datos de frecuencia caridaca\n");
+            System.out.print("4.Mostrar Valores de la tabla BMI\n");
+            System.out.print("5.Salir\n");
+            System.out.print(">>>>>");
+            opc = sc.nextInt();
+            sc.nextLine();
+
+            switch (opc){
+                case 1:
+                    System.out.print("Ingrese el primer nombre del paciente:\n ");
+                    String nombre = sc.nextLine().trim();
+                    perfil1.setNombre(nombre);
+
+                    System.out.print("Ingrese el apellido del paciente:\n ");
+                    String apellido = sc.nextLine().trim();
+                    perfil1.setApellido(apellido);
+
+                    System.out.print("Ingrese el sexo del paciente M/F :\n ");
+                    String sexo = sc.nextLine().trim();
+                    perfil1.setSexo(sexo);
+
+                    System.out.print("Ingrese el dia de nacimiento del paciente:\n ");
+                    int dia = Integer.parseInt(sc.nextLine().trim());
+                    perfil1.setDia(dia);
+
+                    System.out.print("Ingrese el mes de nacimiento del paciente:\n ");
+                    int mes = Integer.parseInt(sc.nextLine().trim());
+                    perfil1.setMes(mes);
+
+                    System.out.print("Ingrese el año de nacimiento del paciente:\n ");
+                    int anio = Integer.parseInt(sc.nextLine().trim());
+                    perfil1.setAnio(anio);
+
+                    System.out.print("Ingrese la altura del paciente en metros:\n ");
+                    double altura = Double.parseDouble(sc.nextLine().trim());
+                    perfil1.setAltura(altura);
+
+                    System.out.print("Ingrese el peso del paciente (kg):\n ");
+                    double peso = Double.parseDouble(sc.nextLine().trim());
+                    perfil1.setPeso(peso);
+                    break;
+                case 2:
+                    perfil1.ImprimirDatosPaciente();
+
+                    break;
+
+                case 3:
+                    perfil1.mostrarFrecuenciaCardiaca(anioAc);
+
+                    break;
+                case 4:
+                    perfil1.ImprimirDatosBMI();
+                    break;
+            }
+        } while (opc != 5);
+
+
+
+
+
